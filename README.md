@@ -1,68 +1,99 @@
-AI Sentiment Radar — VibeCheck
-VibeCheck is a real-time NLP dashboard that scans the global news landscape to quantify the "vibe" of any given topic. By pulling live headlines from Google News and processing them through Sentiment Analysis, it provides a visual breakdown of public perception and media bias.
+# 🧠 AI Sentiment Radar — VibeCheck
 
-✨ Features
-Live News Integration: Fetches real-time headlines using Google News RSS feeds.
+![VibeCheck Banner](assets/banner.png)
 
-NLP Analysis: Utilizes TextBlob to calculate Polarity (positive/negative) and Subjectivity (opinion vs. fact) for every headline.
+[![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![NLP Powered](https://img.shields.io/badge/NLP-TextBlob-6366f1?style=for-the-badge)](https://textblob.readthedocs.io/)
 
-Dynamic Visualizations:
+**VibeCheck** is a high-performance NLP dashboard that quantifies the global sentiment landscape. By scanning real-time Google News headlines and processing them through advanced sentiment analysis, it offers a real-time "radar" into public perception, media bias, and emerging trends.
 
-Sentiment Donut: A high-level breakdown of Positive, Negative, and Neutral coverage.
+---
 
-Polarity Bar Chart: Granular view of the most impactful headlines.
+## ⚡ Features
 
-Vibe-Meter: A custom-styled CSS visualizer for individual article sentiment.
+*   **🔍 Precision Search** – Deep scan any topic: from "Bitcoin" and "Narendra Modi" to "AI Policy" and "Global Markets."
+*   **📡 Real-Time Data** – Direct integration with Google News RSS feeds for the latest discourse.
+*   **🧠 Neural Sentiment Analysis** – Powered by **TextBlob** to extract:
+    *   **Polarity**: Measures the emotional tone (from highly negative to highly positive).
+    *   **Subjectivity**: Distinguishes between factual reporting and opinion-heavy editorials.
+*   **📊 Immersive Visualizations**:
+    *   **Sentiment Donut**: A high-level view of current media tone.
+    *   **Polarity Spectrum**: A vertical bar chart showing the "heat" of individual headlines.
+    *   **Interactive Vibe-Meter**: Glassmorphic UI elements for granular article data.
+*   **🎨 Premium Dark Interface** – A state-of-the-art UI with micro-animations, neon gradients, and Inter typography.
 
-Source Intelligence: Identifies which news outlets are reporting on the topic and their average sentiment lean.
+---
 
-Modern UI: A custom dark-themed interface built with Inter fonts, glassmorphism effects, and responsive CSS.
+## ⚙️ How It Works
 
-🛠️ Tech Stack
-Frontend: Streamlit
+The VibeCheck pipeline is engineered for speed and clarity:
 
-NLP Engine: TextBlob
+```mermaid
+graph TD
+    A[User Search Query] --> B[Google News RSS Feed]
+    B --> C[XML Parsing & Sanitization]
+    C --> D[TextBlob NLP Engine]
+    D --> E{Sentiment Scoring}
+    E -->|Polarity > 0.1| F[Positive 😊]
+    E -->|Polarity < -0.1| G[Negative 😠]
+    E -->|Other| H[Neutral ⚪]
+    F & G & H --> I[Streamlit Dashboard Rendering]
+```
 
-Data Handling: Pandas
+---
 
-Visualization: Matplotlib
+## 🚀 Installation & Setup
 
-API/Data: Google News RSS via requests and xml.etree
+### 1. Requirements
+Ensure you have Python 3.10+ installed.
 
-🚀 Getting Started
-1. Install dependencies
-Ensure you have Python 3.8+ installed, then run:
+### 2. Quick Install
+```bash
+git clone https://github.com/abhinandanrai3712-logs/vibecheck-sentiment-radar.git
+cd vibecheck-sentiment-radar
+pip install -r requirements.txt
+```
 
-Bash
-pip install streamlit pandas requests textblob matplotlib
-2. Download NLP Corpora
-TextBlob requires a one-time download for its underlying models:
-
-Bash
+### 3. Initialize NLP Models
+A one-time download is required for the TextBlob corpora:
+```bash
 python -m textblob.download_corpora
-3. Run the App
-Save the code as app.py and run:
+```
 
-Bash
+### 4. Launch the Radar
+```bash
 streamlit run app.py
-📊 How it Works
-The application follows a three-step pipeline:
+```
 
-Ingestion: The app sanitizes your search query and requests an XML feed from Google News.
+---
 
-Processing: It parses the XML, cleans HTML artifacts, and passes the text to a TextBlob object.
+## 🛠️ Technical Implementation
 
-Scoring: * Polarity > 0.1: Positive 😊
+| Component | Responsibility |
+| :--- | :--- |
+| **Frontend** | Streamlit (Custom CSS & Python Logic) |
+| **NLP Engine** | TextBlob (Averaged Perceptron Tagger) |
+| **Data Source** | Google News RSS (v2.0) |
+| **Visualization** | Matplotlib (Seaborn-inspired palettes) |
+| **UX Design** | Inter Weights + Glassmorphism Tokens |
 
-Polarity < -0.1: Negative 😠
+---
 
-In-between: Neutral ⚪
+## 💡 Example Analysis
 
-💡 Example Queries
-Try these in the search bar for interesting results:
+| Topic | Expected Vibe | Rationale |
+| :--- | :--- | :--- |
+| **Bitcoin** | **Highly Volatile** | Markets swing between extreme bullishness and regulatory FUD. |
+| **Climate Change** | **Objective/Negative** | Frequent fact-based reporting on environmental challenges. |
+| **Space Exploration**| **Highly Positive** | Discovery-focused news usually attracts positive polarity scores. |
 
-Bitcoin (High volatility, mixed sentiment)
+---
 
-Artificial Intelligence (Highly subjective/polarizing)
+## 📄 License
 
-James Webb Space Telescope (Usually high positive polarity)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+*Built with ❤️ by Antigravity*
