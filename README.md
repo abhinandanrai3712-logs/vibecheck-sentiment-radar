@@ -11,6 +11,13 @@
 
 ---
 
+## 🌐 Live Showcase
+
+Want to see VibeCheck in action? Experience the interactive UI here:  
+👉 **[headline-meter-pro.lovable.app](https://headline-meter-pro.lovable.app/)**
+
+---
+
 ## ⚡ Features
 
 *   **🔍 Precision Search** – Deep scan any topic: from "Bitcoin" and "Narendra Modi" to "AI Policy" and "Global Markets."
